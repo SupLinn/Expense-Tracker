@@ -10,7 +10,7 @@ const Header = () => {
         width={160}
         height={100}
         />
-        <Button>Get Started</Button>
+        <Button className='hover:bg-indigo-700 border-indigo-600 bg-[#4845d2]'>Get Started</Button>
     </div>
   )
 }
