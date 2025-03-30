@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono,Outfit } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const outfit = Outfit({
   variable: "outfit",
@@ -18,10 +19,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <ClerkProvider>
+      <html lang="en">
       <body className={`${outfit.variable} ${geistMono.variable}`}>
         {children}
       </body>
     </html>
+    </ClerkProvider>
+    
   );
 }
