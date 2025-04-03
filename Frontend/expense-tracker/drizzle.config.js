@@ -3,6 +3,6 @@
     schema: "./utils/schema.jsx",
     dialect: "postgresql",
     dbCredentials: {
-        connectionString: process.env.NEXT_PUBLIC_DATABASE_URL,
+        url: "postgresql://suplinndb_owner:npg_bmHc5SXseD4Y@ep-autumn-heart-a1wvzbho-pooler.ap-southeast-1.aws.neon.tech/Expense-Tracker?sslmode=require",
     }
  } 

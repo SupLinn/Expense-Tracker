@@ -18,7 +18,7 @@ const Header = () => {
             />
             {isSignedIn ? <UserButton/> :
             <Link href={'/sign-in'}>
-                <Button className='hover:bg-indigo-700 border-indigo-600 bg-[#4845d2]'>Get Started</Button>
+                <Button className='hover:bg-[#4845d2]-indigo-700 border-indigo-600 bg'>Get Started</Button>
             </Link>
              }
             
