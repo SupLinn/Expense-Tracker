@@ -2,7 +2,11 @@ import Link from 'next/link'
 import React from 'react'
 
 function BudgetItem({budget}) {
-    console.log();
+    // console.log();
+    const calculateProgressPerc=()=>{
+        const perc=(budget.totalSpend/budget.amount)*100
+        return perc.toFixed(2)
+    }
     
 
   return (
@@ -24,7 +28,7 @@ function BudgetItem({budget}) {
                 <h2 className='text-xs text-slate-400'>₹{budget.amount-budget.totalSpend} Remaining</h2>
             </div>
             <div className='w-full bg-slate-300 h-2 rounded-full'>
-                <div className='w-[40%] bg-[color:#4845d2] h-2 rounded-full'>
+                <div className='bg-[color:#4845d2] h-2 rounded-full' style={{width: `${calculateProgressPerc()}%`}}>
                     
                 </div>
             </div>
