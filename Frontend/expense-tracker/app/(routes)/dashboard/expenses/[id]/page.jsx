@@ -84,10 +84,11 @@ function ExpensesScreen({params}) {
   return (
     <div className='p-10'>
         <h2 className='text-2xl font-bold flex justify-between items-center'>
-        <span>
-          <ArrowLeft onClick={()=>route.back()} className='cursor-pointer '/>
-            My Expenses
-        </span>
+        <div className="flex items-center gap-2">
+          <ArrowLeft onClick={() => route.back()} className="cursor-pointer w-5 h-5" />
+          <h2 className="text-2xl font-bold">My Expenses</h2>
+        </div>
+
         <div className='flex gap-2 items-center'>
           <EditBudget budgetInfo={budgetInfo}
           refreshData={()=>getBudgetInfo()}/>
