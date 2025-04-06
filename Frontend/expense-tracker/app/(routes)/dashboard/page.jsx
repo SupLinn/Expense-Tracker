@@ -47,7 +47,7 @@ function Dashboard() {
       .orderBy(desc(Expenses.id))
       setExpensesList(result)
 
-      console.log(result);
+      // console.log(result);
       
     }
 
