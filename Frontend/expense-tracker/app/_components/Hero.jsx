@@ -1,6 +1,16 @@
+"use client"
+
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const Hero = () => {
+
+
+    const router = useRouter()
+    const handleClick = () => {
+      router.push("/dashboard")
+    }
+
   return (
     <section className="bg-gray-50 flex items-center flex-col">
   <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 lg:px-8 lg:py-32">
@@ -15,13 +25,15 @@ const Hero = () => {
       </p>
 
       <div className="mt-4 flex justify-center gap-4 sm:mt-6">
-        <a
+        <button
+          onClick={handleClick}
           className="inline-block rounded border border-indigo-600 bg-[#4845d2] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
           href="/sign-in"
         >
           Get Started
-        </a>
+        </button>
       </div>
+      
     </div>
   </div>
 </section>
