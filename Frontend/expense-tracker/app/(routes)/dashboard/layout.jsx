@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import SideNav from './_components/SideNav'
 import DashboardHeader from './_components/DashboardHeader'
 import { useUser } from '@clerk/nextjs'
@@ -9,6 +9,7 @@ import { db } from '@/utils/dbConfig'
 import { useRouter } from 'next/navigation'
 
 const DashboardLayout = ({children}) => {
+  const [isOpen, setIsOpen] = useState(false)
   const {user} = useUser();
   const router = useRouter();
 
@@ -30,11 +31,13 @@ const DashboardLayout = ({children}) => {
 
   return (
     <div>
-        <div className='fixed md:w-64 hidden md:block'>
-            <SideNav/>
+        <div className='flex'>
+            <SideNav
+            isOpen={isOpen} setIsOpen={setIsOpen}/>
         </div>
-        <div className='md:ml-64'>
-            <DashboardHeader/>
+        <div className={`flex-1 transition-all duration-500 ${isOpen ? "ml-64" : " ml-0"}`}>
+            <DashboardHeader
+            isOpen={isOpen} setIsOpen={setIsOpen}/>
             {children}
         </div>
     </div>
