@@ -1,6 +1,6 @@
 "use client"
 import { UserButton } from '@clerk/nextjs'
-import { LayoutGrid, PiggyBank, ReceiptText, ShieldCheck, X } from 'lucide-react'
+import { LayoutGrid, PiggyBank, ReceiptText, Scan, ShieldCheck, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -30,10 +30,10 @@ function SideNav ({isOpen, setIsOpen}) {
             path:'/dashboard/expenses'
         },
         {
-            id:4,
-            name:'Upgrade',
-            icon:ShieldCheck,
-            path:'/dashboard/upgrade'
+            id: 5,
+            name:'Receipt Processing',
+            icon: Scan,
+            path:'/dashboard/image'
         }
     ]
 

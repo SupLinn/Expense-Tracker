@@ -12,7 +12,9 @@ function DashboardHeader({isOpen, setIsOpen}) {
   return (
     <div className='p-5 shadow-md border-b flex justify-between'>
        <div className='flex gap-5'>
-       <Sidebar className='cursor-pointer' onClick={()=>{handleToggle()}}/>
+        {
+          !isOpen && <Sidebar className='cursor-pointer transition-all duration-300 ease-in-out' onClick={()=>{handleToggle()}}/>
+        }
         
         <div>
           <Image src={'/logo.svg'}

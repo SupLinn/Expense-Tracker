@@ -18,7 +18,7 @@ function AddExpense({budgetId,user,refreshData}) {
             name:name,
             amount:amount,
             budgetId:budgetId,
-            createdAt:moment().format('DD/MM/YYYY')
+            createdAt: new Date()
         }).returning({insertedId:Budgets.id})
 
         // console.log(result);
